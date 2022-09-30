@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Список продуктов 
+{% endblock %}
+
+
+{% block content %}
+<h1>Список продуктов</h1>
+<div class="row">
+{% for product in products %}
+
+  <div class="col-xl-3 card mb-3 ms-3 text-dark bg-light" style="max-width: 540px;">
+    <div class="row g-0 ">
+      <div class="col-md-4">
+        <img src="{{ product.photo }}" class="img-fluid rounded-start" alt="{{product.name}}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.get_category_display }}</p>
+          <p class="card-text"><small class="text-muted">Цена: {{ product.price }} тг.</small></p>
+          <a href="{% url 'product' product.pk %}">see more >>></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endfor %}  
+</div>
+{% endblock %}
