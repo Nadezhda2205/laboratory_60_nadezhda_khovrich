@@ -1,0 +1,486 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2022-09-30T15:51:02.791Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Молоко",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2022-09-30T15:52:03.133Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Сок вишневый",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2022-09-30T15:52:52.857Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Говядина",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2022-09-30T15:53:52.092Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Булочка",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2022-09-30T15:54:37.119Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Халва",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2022-09-30T15:55:49.140Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "Бисквитный пирог",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add product",
+    "content_type": 7,
+    "codename": "add_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change product",
+    "content_type": 7,
+    "codename": "change_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete product",
+    "content_type": 7,
+    "codename": "delete_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view product",
+    "content_type": 7,
+    "codename": "view_product"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$A1YoWB7A0rEit7Xx8inSa2$4N15j9nQuLLdcuNLv/DGzpe3nczhE+Js/CGxko7S1DQ=",
+    "last_login": "2022-09-30T15:43:43.097Z",
+    "is_superuser": true,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-09-30T15:43:01.395Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "products",
+    "model": "product"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pmr13r9pgllra2lg2a680te17rytmvnm",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSE8CgMu3fcbmhkGpWogKe3K-O_apAvd3nPOfYkJt7VMW8_LNLM4Cy1OvxtheuS6A75jvTWZWl2XmeSuyIN2OTbOz8vh_h0U7OVbJwjgrsqxZVKKUGkO3hMEgyomiBHSAEysvQ_aGQhsY9DR5GyZ8xDF-wPSNTde:1oeIAx:GVhFQGDIqADoAr8yKKXoazyq7M3DG45Utz0ZjDt1U14",
+    "expire_date": "2022-10-14T15:43:43.102Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "name": "Молоко",
+    "description": "Молочный продукт",
+    "photo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYVFRgWFhUYGBgYGRgaGBgYEhIZGhgSGBgZGRgYGBgcIS4lHB4rHxgYJjgmKy8xNTU1GiQ7QDszPy40NTEBDAwMEA8QGhISHzQrISs0NDQ0NDQ0NjQ0NDQ0NDQ0NDQ0NDQ0NDQ0NjY0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAADAAECBAUGB//EAEQQAAICAAQCBQoDBgQFBQEAAAECABEDEiExBEEFIlFxgQYTMkJSYZGhscEUktEVIzNigvBystLhQ1OTwvEWFySU4gf/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBAX/xAAlEQEBAAIBBAICAgMAAAAAAAAAAQIRAxIhMVETQQRhcZEUIoH/2gAMAwEAAhEDEQA/APQ3aQuQdowMjQ6PJEwSRM0IkZNFlctJB4BnapA6yJe4kECNVJFo7wZgJnjM0G51j3AKhjM8ddpEwIs8Stci4kU0gWAYZGlcGFVoFgiBZo6PykMXeFRZpPBfWVyYg0I0S8EXldcSMzwqyrydymjyfnIRYqB4gwiPcjjrMqq3FHyxo7qdzGuRaRJmkFVo7NAq0mYDExbyMLhwh1So6vrHxINTrAm5kbksTWQUwGdYyGPik1AK0C+ggcbSSwn0jY20AGYxGRRtYRzAkhkwZBRDYaQCYQkMaEZ6ld2uBEyAiJiUQqYEi0lcGxgTSEVbgQI6vUC2iVI4xMGMaJ8W5kQuKLSKBBjImIxZZoMhjs8htJAawDKlw6YUlhrpB4uJ2QiOLBgSLPcZTrAOguQYVC4cg4gRVwdJF0ERSBZjAMlwWK8PgPcHxSc4AcMEkAbnTxmsOBCAF7PuGw8ZndGOBiJftD56TrSZqaSslQg2RfEkyYxR7Cfll1wvsj4CV3dR6o+AmpJfpnYPVbQoP6bBgOL4YLsbEtNjnlp3SrxDnKdbuLjNLtTMYwbMRGzGc2kyZGRzRFoBFMYi4ymIGFOREBGLQiiZCqKTqPAA0VwJxLjh5oSaRL0ZEvGZbhF3zukBlJMjhLL2GlbwKwwzcKcKobEcSu2LcCaGo+JBEx2bSAgZBkklMfNADhrrDsLEbDjFxdQKjCjNbhOkgFpyRVanUUbA1O2oPbMrHQ33zT4ThAynNy5/H73E39JdJY/SRPoFD3u4+ZUSq3GYhOyd4xL+QFwPSPRgXDz7nmKmVww02+E1vKJ2ro2ZKFsWYgWBYAPMA1FxBGbKFrLXMm7AN34zN4YVymjxA2YcxR7wNPl9Iu7DUCZYgkkq3JFamWgXwYNsOHzQeIYA8kaMCY8BJrDIIFRUIHgWNIoDzkUKzA0SvHdJJEgMDZlhBEmFLODhQhsA0ZZ4ltI/mRvKvGY1CAJnuINrK2Fi2YYnWAZ2kVaReMsCbNGQmRhuGW4EsOAxGprhsfQwLLcC7wyZyKG31/vWbWBwlLRO5vT5CA6H4bLhg82N+HKaNSsq3EcErrlayO8j6SunQ+CPUH5m/WXsUyGeU7K/7Kw+QI7mP3g8bgCFIBsbi9wRLvnIxxoGAcTKaOn+8d30j9NaMG7frKA4rlMtCtiSDYkEzwJeBaDydymGIhkJgFzRyYJ3kFa4UTzkUhligRfWHwMODAkhjVAsldRLWyyiuJcm+PpUItI+kyuNW2mgjdWZ+O4B8YARgVqIYAwgxhUBicWtwJEmMDBvxSgXcoYnSYuBrBhLPCmc6nSIuaOBxoEC7xjayGEbI9+kzuI43MZb6Gxc+Ki/zD5a/aB22EtADsAEnHjEyoFiwDQzwDmE0hcQMYxoVS6aS8O+wic+J0/GLaMO0fOcz+Ee+Q9xYX8N5KQQJpFh4eskMMgasPy4h/7YyCt3H5cT/TJtrQrLIjEEmcJmHVo+NfWpU4nhcVNSh8BcoK7SeCwqYeL0h",
+    "category": "milk",
+    "balance": 6,
+    "price": "2.33"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "name": "Сок вишневый",
+    "description": "Полезный",
+    "photo": "https://www.patee.ru/r/x6/03/be/2a/390x.jpg",
+    "category": "juice",
+    "balance": 7,
+    "price": "5.55"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "name": "Говядина",
+    "description": "Постная",
+    "photo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUVFBcVFRQYGBcYGh4eGhoZGR0iIx0dHR4ZGiEeIB0gICwjIx4pIBodJDYlKS0vMzMzGSM4PjgyPSwyMy8BCwsLDw4PHhISHjIpIikyMjIyOjIyMjQyMjIyMjIyMjI0MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIAKQBMwMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAAEBQIDAAEGB//EAD4QAAIBAwMCBAQEBgEDAwQDAAECEQADIQQSMUFRBSJhcRMygZEGobHwI0JSwdHhFGJy8RUWglOSotIHJDP/xAAaAQADAQEBAQAAAAAAAAAAAAABAgMEAAUG/8QAMBEAAgICAgEDAwEGBwAAAAAAAAECEQMhEjFBBBNRIjJhcRRSgaGx8AUVM0JikeH/2gAMAwEAAhEDEQA/AOgVnlQuoBwZDAE/Tiiw9zkEOR0HlMfcg/WkNvW/xD8RggUxMYjJ475o3U6u2wO26isIAZQMzwY5j71jUke3OL/tDJb+VbeySMqyT+lTe/L7HggjcORwfuPelwvNbtybm5hkArAJ/pGZkjtVLD/k/wAS5auIqfIGMEzyAvbjmnsnwV76GrWJO74rEHIScD2OCRU7124gZg9tUVZmJPtHFDWr6bTKFUHG6J9o6YpP4jrdyiFAXgCeYzn2pJ5FFD48Tm/wAarUtcuF2PXyj3pvaKm0iKwBEnP9UY2jiudusZJBx3qu/r9i7cZB5AMZnAPWsSlUj13i5RSXgYL4s5b4TyzDDLcPkA7gAZHpmhtR4davk7BuiDttKVEdYDd/TtxSlr6uSWYDiCFOI4E9PaoJ4iVUkGWBkMTntx/vrV0/kzzj8aG9zw3QqNhS7uOAQ5MHjsMj1FafwnRqRt1FxCBMmDPuNuGFKtPobl5fiJct+Y5DMQ3PJMYHXmm+l09q2Sl22QQQfigz0kQ5lfpHem/giD/Ddgx/DzupuNcm2DK7pUuO4JGM00seIW7NtrYVbYiCnLzzuZx1oS54/bVjvZ7oEFQzQAfYHMd/yqNj8MXdU3xJWxbYSASWPvBMj6miv+Isn+/0WabWG+rFlDv0ItsSI/p2jme8cVbpvD7t5DbvIiLJi7dEN9AM/errL6m2fhWbQm3C7gdqGcAxOSfX7VDxLT6xlJi0GSGhSd2Y67YzRoXlelSF7fhu1aeH1KHErAweec9KUOnm3taEcJ5CUaP5q6RvCtTetm3cCIGIYn5mGP16U50untaa2qOQAvMKxM55GQJAmutfoGpdXZwdiyLrrbt2Wa2T5ys5PXzHC12Ok/D2htoPiojP0VXMmSAAW/qqGs/EKLA0xDST5VtmT7mZ+2faue1dvUXLkuQrsJlzGB69AOM9qm5/Cs0Q9Ny3J0v5jzXf8NAdlnTrErBO4z1gKTkYyT1pQdVbFshbfzCMGQB7Ut06W1yzq5E4JeJHQBRnPWYxWrupYHeNoz/SB/8AjHFSnbdmh44KPFNgjlkxmOk1g1E1bd8RY4YAg/vihHjkdfypavtHh+q9I4LlHr+hNr9aGpHtVc1mwdRTcUYAgXl71JH7c0KtkTRVnT95ikkkjjYP8ykgjsaf6D8QXVRQX3bf6s4pCxReCZ9akDiRxSSVo46t9A+oBuWl3EidoNJtNbuWr4W6hthjjd1PvR34VuM2+2Lhtt0g8jtRHjNq6+1LkttMqwqGopxYH3YQXQHq5/KrULseQo7Cq00x2jMGKts6Zhya82TRQLt6cdc+prLltQO1aRDgd66DRfh1WWbrZPAB4o+n9NkzyqIW0jj9WtxtqpjcaJ0/4au4k0X4uhs3kQEHaJB9K63w28txAw7Z969j0/pYxbjLtFq4xtCi14PcAA+IcVldNsFZXoe1EnzZ5g+lf/kEuZV/lO2REAnbPamZ1VxVabSMB1mJH1ED/dBaMtcRw",
+    "category": "meat",
+    "balance": 9,
+    "price": "8.88"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "name": "Булочка",
+    "description": "Вкусная, свежая",
+    "photo": "https://alimero.ru/uploads/images/00/61/14/2019/04/23/c11b13_wmark.jpg",
+    "category": "bread",
+    "balance": 8,
+    "price": "10.20"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "name": "Халва",
+    "description": "Свежая, полезная",
+    "photo": "https://gotovim.uz/wp-content/uploads/2021/03/domashnyaya-halva.jpg",
+    "category": "other",
+    "balance": 4,
+    "price": "11.20"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "name": "Бисквитный пирог",
+    "description": "Шоколадный с кокосовой стружкой. ммммм.....",
+    "photo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUVFBcVFRUXFxcYHB0aGhoaGhkeIxkhHR0gGh4dGhoeISwjGh0pHhoZJTYkKi0vOjNAGSI4PjgwSiwyMy8BCwsLDw4PHhISHjopIyk4MjIyMjIyMjI+Mj0yMjIyMjIyMjIyMjIyOzIyMi8yMjIyMjI9MjIyMjIyMjIvMjIyMv/AABEIANIA8AMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAgMFBgcBAAj/xAA7EAACAQMCBAMGBAUFAQADAQABAhEAAyESMQQFQVEGImETMnGBkaFCsdHwByNiweEUM1Jy8YI0Q7IW/8QAGAEAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAiEQEBAAMBAAICAgMAAAAAAAAAAQIRITESQQNRImETMnH/2gAMAwEAAhEDEQA/AIjwv4YuErfuL7QBWItQZLnyqGJwV3bfoBVv/wD801yBctox0gq11QWQrpx5WIJwc9ie8VceD4MW1jtRBt9hWXV3O2qtwvhOwr63RXeANRULEGZx19Tmp61YVYAAA6QIovT86pfjfxRc4R/Z21WQFYs4J94kADoogb+tTYJvK6WziLqW1Z7jKqjdicCdgfXal8NxFt/cdHmD5WB3yMDasC5xz72ty5dcuRcuBxbDHSWBByNpAgfKgrd0O7XUJDfh0nSR0Gdx0z6UKuD6PVug2pF1h9arPhTn5v8AC29bTdQBbpIA1NG4jeRHbrWfeN/E1y7xGi2biIqXLbAkrKkS0x0aB9BQmY7qa5h42upxN60xLWmW4iKFAKGCqMDucjPxJ6VVuV+I71m5wzXbj+ytO0BSCSrEllPedhNQnFc11IhKq3lW2dUliFUDVIODgfWmuJtI2nTqTSRrR8T/AFKYzI6HvVSfdacnH0LwXM7V22ly22pWAI9J6MOhHUUar1mXg3nPD209m9wIV85BB804kHZj7ogVKv4+th3VbVy4EJgqQJUD3iCJGxqZtFxvi7SKbdJ6TVXTx7w8BvZ3dhI8mM53bpn41ZrHFrcRXtkFWAIPp+vpQmywNxHBoWyq42x6fv6Uk8qtEABFx6fWjHcTXdXamSpeJ/CS34e3pVxOoEYftnpFU3jfDnEW9KHhS6mYIGoYE57H/wArV3c5HpNcD6hEbUtTa5nZGC8RwPEvIThiqIYI9nBn1PQz0Bp7hOO4nhYVjcVTnS2CPka3McMI2E9fWo3nHJLd+3ouKPLlT2qr4cz1eqJwHPyx8xLKRvj971IcLzFbuqFZQsZaPNM7fSoZ+TPaLquDbkkzAImAc9MgVGtzNA8ODM/1AH5gwZ9O1Rpev0uTXAdjIpM1G8DzNXc28ah2+xg5ipS4uJqSKmkTXVNcamHWruqksaSTTBTtNJJrhakFqZNbkR0pPT8vnUFyHxPw3GBzaYq9uBcRhBSZz2K4ORVU5z/EnS/s7FsDMa3OonfKqPqCSd8iq2iYWtBN5R5RM/A1i38ROA4pOIZyzXbd5z7KCW09dEDKwOnxpfGeNb90uty4wR/5ZVYXB3JK5HQYPeoLlvGvwzXVtjSCzLJ05Vh6nODg+vxqWmOPxB3bL2yE0kure4yKwgdWVgRn+qmuX8uW4xZXG5JC4Kjf4RA9albnM7t4gHWWO2QwJic9zigOH4XVMrpEyNOpcnuOuB+dG1WbW/guYJa4cmw6sxM6gCWM4LkEZAE9MVDXuFF2Wk+0bVqLez0+adpMjB+sUheJFq2ls+8oIRcSQ51b9R5icmo3jNaLIADuCqhYhQfeM7sfX1pSd4NaJexaVbRGpolXAYKWnIZAQYMmIMzA+UXeI2ZiO6CSfTU3U/lT94ZIUhSAV/ECw6kT5Y/Wk8JwJdwsoJmWudO7QCZFaxnd/Q3lbKze1dJSzpP/ACVzqEI0icrqz6URd5mbp0Mz+yDa9IYKIkkjC+sA9INO8ruLw9twPNqgk",
+    "category": "bread",
+    "balance": 10,
+    "price": "77.50"
+  }
+}
+]
