@@ -13,12 +13,15 @@ def products_view(request: WSGIRequest):
         products = Product.objects.filter(balance__gt=0).order_by('category', 'name')
         search = ''
         form = SearchForm()
+    
+    categories = Product.CATEGORY_CHOICES
 
         
     context = {
         'products': products,
         'search': search,
-        'form': form
+        'form': form,
+        'categories': categories
     }
     return render(request=request, template_name='products.html', context=context)
 
@@ -83,3 +86,16 @@ def product_confirm_delete(request, pk):
     product = get_object_or_404(Product, pk=pk)
     product.delete()
     return redirect('products')
+
+def products_category_view(request, category):
+    products = Product.objects.filter(category=category)
+    for item in Product.CATEGORY_CHOICES:
+        if category == item[0]:
+            category = item[1]
+            break
+    context = {
+        'category': category,
+        'categories': Product.CATEGORY_CHOICES,
+        'products': products 
+    }
+    return render(request, 'products_category.html', context)
