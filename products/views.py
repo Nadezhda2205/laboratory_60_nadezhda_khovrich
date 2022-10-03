@@ -73,5 +73,13 @@ def product_edit_view(request, pk):
 
 def product_delete_view(request, pk):
     product = get_object_or_404(Product, pk=pk)
+    context = {
+        'product': product
+    }
+    return render(request, 'product_confirm_delete.html', context)
+
+    
+def product_confirm_delete(request, pk):
+    product = get_object_or_404(Product, pk=pk)
     product.delete()
     return redirect('products')
