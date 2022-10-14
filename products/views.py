@@ -2,28 +2,45 @@ from django.shortcuts import render, get_object_or_404, redirect
 from products.models import Product
 from django.core.handlers.wsgi import WSGIRequest
 from products.forms import ProductForm, SearchForm
+from django.views.generic import ListView
+from django.db.models import Q
 
-def products_view(request: WSGIRequest):
-    search = request.GET.get('search')
-    if search:
-        form = SearchForm(request.GET)
 
-        products = Product.objects.filter(balance__gt=0).order_by('category', 'name').filter(name__iregex=search)
-    else:
-        products = Product.objects.filter(balance__gt=0).order_by('category', 'name')
-        search = ''
-        form = SearchForm()
-    
-    categories = Product.CATEGORY_CHOICES
+class ProductListView(ListView):
+    template_name = 'products.html'
+    model = Product
+    context_object_name = 'products'
+    ordering = ('category', 'name')
+    paginate_by = 6
+    paginate_orphans = 2
 
-        
-    context = {
-        'products': products,
-        'search': search,
-        'form': form,
-        'categories': categories
-    }
-    return render(request=request, template_name='products.html', context=context)
+    def get(self, request, *args, **kwargs):
+        self.form = self.get_search_form()
+        self.search_value = self.get_search_value()
+        return super().get(request, *args, **kwargs)
+
+    def get_search_form(self):
+        return SearchForm(self.request.GET)
+
+    def get_search_value(self):
+        if self.form.is_valid():
+            return self.form.cleaned_data.get('search')
+        return None
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=object_list, **kwargs)
+        context['form'] = self.form
+        return context
+
+
+    def get_queryset(self):
+        queryset = super().get_queryset().filter(balance__gt=0)
+        if self.search_value:
+            queryset = queryset.filter(name__iregex=self.search_value)
+        return queryset
+
+
+
 
 def product_view(request, pk):
     product = get_object_or_404(Product, pk=pk)
