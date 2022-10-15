@@ -3,8 +3,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from products.models import Product
 from django.core.handlers.wsgi import WSGIRequest
 from products.forms import ProductForm, SearchForm
-from django.views.generic import ListView, DetailView, CreateView
-from django.urls import reverse
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse, reverse_lazy
 
 
 class ProductListView(ListView):
@@ -48,31 +48,6 @@ class ProductDetailView(DetailView):
     context_object_name = 'product'
 
 
-
-
-# def product_add_view(request:WSGIRequest):
-#     if request.method == 'POST':
-#         form = ProductForm(request.POST)
-#         if not form.is_valid():
-#             context = {
-#             'choices': Product.CATEGORY_CHOICES,
-#             'form': form
-#             }  
-#             return render(request=request, template_name='product_add.html', context=context)
-
-#         product: Product = Product.objects.create(**form.cleaned_data)
-#         return redirect('product', pk=product.pk)
-        
-#     form = ProductForm()
-#     context = {
-#         'choices': Product.CATEGORY_CHOICES,
-#         'form': form
-#     }    
-#     return render(request=request, template_name='product_add.html', context=context)
-
-
-
-
 class ProductCreateView(CreateView):
     template_name: str = 'product_add.html'
     model = Product
@@ -86,26 +61,15 @@ class ProductCreateView(CreateView):
         return reverse('product', kwargs={'pk': self.object.pk})
 
 
-def product_edit_view(request, pk):
-    if request.method == 'POST':
-        product = get_object_or_404(Product, pk=pk)
-        form = ProductForm(request.POST, instance=product)
-        if not form.is_valid():
-            context = {
-            'choices': Product.CATEGORY_CHOICES,
-            'form': form
-            }  
-            return render(request=request, template_name='product_edit.html', context=context)
+class ProductUpdateView(UpdateView):
+    template_name = 'product_update.html'
+    form_class = ProductForm
+    model = Product
+    context_object_name = 'products'
 
-        form.save()
-        return redirect('product', pk=product.pk)
-        
-    product = get_object_or_404(Product, pk=pk)
-    form = ProductForm(instance=product)
-    context = {
-        'form': form
-    }
-    return render(request=request, template_name='product_edit.html', context=context)
+    def get_success_url(self):
+        return reverse('product', kwargs={'pk': self.object.pk})
+
 
 
 def product_delete_view(request, pk):

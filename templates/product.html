@@ -22,7 +22,7 @@
 
           <p class="card-text">{{ product.get_category_display }} </p>
           <p class="card-text"><small class="text-muted">{{ product.description }}</small></p>
-          <a href="{% url 'product_edit' product.pk %}">Edit</a>
+          <a href="{% url 'product_update' product.pk %}">Edit</a>
           <a href="{% url 'product_delete' product.pk %}">Delete</a>
         </div>
       </div>
