@@ -1,9 +1,10 @@
+from dataclasses import field
 from django.shortcuts import render, get_object_or_404, redirect
 from products.models import Product
 from django.core.handlers.wsgi import WSGIRequest
 from products.forms import ProductForm, SearchForm
-from django.views.generic import ListView, DetailView
-from django.db.models import Q
+from django.views.generic import ListView, DetailView, CreateView
+from django.urls import reverse
 
 
 class ProductListView(ListView):
@@ -48,25 +49,42 @@ class ProductDetailView(DetailView):
 
 
 
-def product_add_view(request:WSGIRequest):
-    if request.method == 'POST':
-        form = ProductForm(request.POST)
-        if not form.is_valid():
-            context = {
-            'choices': Product.CATEGORY_CHOICES,
-            'form': form
-            }  
-            return render(request=request, template_name='product_add.html', context=context)
 
-        product: Product = Product.objects.create(**form.cleaned_data)
-        return redirect('product', pk=product.pk)
+# def product_add_view(request:WSGIRequest):
+#     if request.method == 'POST':
+#         form = ProductForm(request.POST)
+#         if not form.is_valid():
+#             context = {
+#             'choices': Product.CATEGORY_CHOICES,
+#             'form': form
+#             }  
+#             return render(request=request, template_name='product_add.html', context=context)
+
+#         product: Product = Product.objects.create(**form.cleaned_data)
+#         return redirect('product', pk=product.pk)
         
-    form = ProductForm()
-    context = {
-        'choices': Product.CATEGORY_CHOICES,
-        'form': form
-    }    
-    return render(request=request, template_name='product_add.html', context=context)
+#     form = ProductForm()
+#     context = {
+#         'choices': Product.CATEGORY_CHOICES,
+#         'form': form
+#     }    
+#     return render(request=request, template_name='product_add.html', context=context)
+
+
+
+
+class ProductCreateView(CreateView):
+    template_name: str = 'product_add.html'
+    model = Product
+    fields = ('name', 'description', 'photo', 'category', 'balance', 'price')
+    
+    def get(self, request, *args, **kwargs):
+        self.object = None
+        return super().get(request, *args, **kwargs)
+
+    def get_success_url(self):
+        return reverse('product', kwargs={'pk': self.object.pk})
+
 
 def product_edit_view(request, pk):
     if request.method == 'POST':
