@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from products.models import Product
 from django.core.handlers.wsgi import WSGIRequest
 from products.forms import ProductForm, SearchForm
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.db.models import Q
 
 
@@ -30,6 +30,7 @@ class ProductListView(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=object_list, **kwargs)
         context['form'] = self.form
+        context['categories'] = Product.CATEGORY_CHOICES
         return context
 
 
@@ -40,14 +41,12 @@ class ProductListView(ListView):
         return queryset
 
 
+class ProductDetailView(DetailView):
+    template_name: str = 'product.html'
+    model = Product
+    context_object_name = 'product'
 
 
-def product_view(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    context = {
-        'product': product
-    }
-    return render(request=request, template_name='product.html', context=context)
 
 def product_add_view(request:WSGIRequest):
     if request.method == 'POST':
