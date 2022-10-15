@@ -25,7 +25,7 @@
 <div class="row">
 {% for product in products %}
 
-  <div class="col-xl-3 card mb-3 ms-3 text-dark bg-light" style="max-width: 540px;">
+  <div class="col-xl-3 card mb-3 ms-3 text-dark bg-light" style="max-width: 600px;">
     <div class="row g-0 ">
       <div class="col-md-4">
         <img src="{{ product.photo }}" class="img-fluid rounded-start" alt="{{product.name}}">
@@ -35,7 +35,8 @@
           <h5 class="card-title">{{ product.name }}</h5>
           <p class="card-text">{{ product.get_category_display }}</p>
           <p class="card-text"><small class="text-muted">Цена: {{ product.price }} тг.</small></p>
-          <a href="{% url 'product' product.pk %}">see more >>></a>
+          <a href="{% url 'product' product.pk %}">Больше>>></a>
+          <a href="{% url 'cart_add_product' product.pk %}">Добавить в корзину</a>
         </div>
       </div>
     </div>

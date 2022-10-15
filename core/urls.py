@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from products.views import ProductListView, ProductDetailView, ProductCreateView, ProductUpdateView, ProductDeleteView, products_category_view
 
 urlpatterns = [
@@ -12,4 +12,7 @@ urlpatterns = [
     path('product/delete/<int:pk>', ProductDeleteView.as_view(), name='product_delete'),
     path('product/confirm-delete/<int:pk>', ProductDeleteView.as_view(), name='product_confirm_delete'),
     path('products/<str:category>', products_category_view, name='products_category_view'),
+
+    path('cart/', include('cart.urls')),
+
 ]
