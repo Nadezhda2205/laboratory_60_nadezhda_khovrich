@@ -34,7 +34,6 @@ class ProductListView(ListView):
         context['categories'] = Product.CATEGORY_CHOICES
         return context
 
-
     def get_queryset(self):
         queryset = super().get_queryset().filter(balance__gt=0)
         if self.search_value:
@@ -71,19 +70,11 @@ class ProductUpdateView(UpdateView):
         return reverse('product', kwargs={'pk': self.object.pk})
 
 
+class ProductDeleteView(DeleteView):
+    template_name = 'product_confirm_delete.html'
+    model = Product
+    success_url = reverse_lazy('products')
 
-def product_delete_view(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    context = {
-        'product': product
-    }
-    return render(request, 'product_confirm_delete.html', context)
-
-    
-def product_confirm_delete(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    product.delete()
-    return redirect('products')
 
 def products_category_view(request, category):
     products = Product.objects.filter(category=category)
