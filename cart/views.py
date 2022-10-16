@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from products.models import Product
 from cart.models import ProductInCart
-from django.views.generic import ListView
+from django.views.generic import ListView, DeleteView
+from django.urls import reverse_lazy
 
 
 def cartaddproductview(request, pk):
@@ -40,7 +41,11 @@ class CartProductsView(ListView):
             price = productincart.product.price
             quantity = productincart.quantity
             total += price * quantity
-        print(total)
         context['total'] = total
         return context
 
+
+class CartInProductDeleteView(DeleteView):
+    template_name = 'cart/cart_products.html'
+    model = ProductInCart
+    success_url = reverse_lazy('cart_products')

@@ -29,7 +29,11 @@
           <td>{{ productincart.quantity }}</td>
           <td>{{ productincart.product.price }}</td>
           <td>{{productincart.quantity|mul:productincart.product.price|floatformat:2}}</td>
-          <td><a href="#">Удалить</a></td>
+          <td>
+            <form method="POST" action="{% url 'cart_product_delete' productincart.pk %}">
+            {% csrf_token %}
+            <input type="submit" value="Удалить">
+         </form>
         </tr>
       {% endfor %}
       <tr>
