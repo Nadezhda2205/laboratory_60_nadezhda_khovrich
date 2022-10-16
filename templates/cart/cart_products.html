@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Корзина 
+{% endblock %}
+
+
+{% block content %}
+<h1>Список продуктов</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Продукт</th>
+        <th scope="col">Количество</th>
+        <th scope="col">Стоимость</th>
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for productincart in productsincart %}
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td><a href="{% url 'product' productincart.product.pk %}">{{ productincart.product.name }}</a></td>
+          <td>{{ productincart.quantity }}</td>
+          <td>{{ productincart.product.price }}</td>
+          <td><a href="#">Удалить</a></td>
+        </tr>
+        
+      
+      {% endfor %}
+      
+    </tbody>
+  </table>
+
+  {% endblock %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from products.models import Product
 from cart.models import ProductInCart
+from django.views.generic import ListView
 
 
 def cartaddproductview(request, pk):
@@ -24,3 +25,10 @@ def cartaddproductview(request, pk):
         productInCart = ProductInCart(product=product, quantity=1)
         productInCart.save()
     return redirect('products')
+
+
+class CartProductsView(ListView):
+    model = ProductInCart
+    template_name = 'cart/cart_products.html'
+    context_object_name = 'productsincart'
+
