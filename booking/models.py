@@ -17,7 +17,7 @@ class Booking(models.Model):
 
     
     def __str__(self):
-        return f'{self.username}: {self.created_at}'
+        return f'Заказ №{self.pk}: {self.username}'
 
 class BookingProduct(models.Model):
     booking = models.ForeignKey(to=Booking, on_delete=models.CASCADE)
