@@ -1,4 +1,3 @@
-from dataclasses import fields
 from django import forms
 from products.models import Product
 from django.forms import ModelForm

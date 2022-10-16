@@ -45,5 +45,13 @@
       </tr>
     </tbody>
   </table>
+  <form action="{% url 'add_booking' %}" method="POST">
+    {% csrf_token %}
+    
+      {{ bookingform.as_p }}
 
-  {% endblock %}
+    <input type="submit" value="Оформить заказ">
+
+  </form>
+
+{% endblock %}
