@@ -32,3 +32,15 @@ class CartProductsView(ListView):
     template_name = 'cart/cart_products.html'
     context_object_name = 'productsincart'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        productsincart = ProductInCart.objects.all()
+        total = 0
+        for productincart in productsincart:
+            price = productincart.product.price
+            quantity = productincart.quantity
+            total += price * quantity
+        print(total)
+        context['total'] = total
+        return context
+

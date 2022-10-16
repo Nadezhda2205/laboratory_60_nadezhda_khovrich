@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load mathfilters %}
 
 {% block title %}
     Корзина 
@@ -6,7 +7,7 @@
 
 
 {% block content %}
-<h1>Список продуктов</h1>
+<h1>Список продуктов в корзине</h1>
 
 <table class="table">
     <thead>
@@ -15,6 +16,7 @@
         <th scope="col">Продукт</th>
         <th scope="col">Количество</th>
         <th scope="col">Стоимость</th>
+        <th scope="col">Сумма</th>
         <th scope="col"></th>
 
       </tr>
@@ -26,12 +28,17 @@
           <td><a href="{% url 'product' productincart.product.pk %}">{{ productincart.product.name }}</a></td>
           <td>{{ productincart.quantity }}</td>
           <td>{{ productincart.product.price }}</td>
+          <td>{{productincart.quantity|mul:productincart.product.price|floatformat:2}}</td>
           <td><a href="#">Удалить</a></td>
         </tr>
-        
-      
       {% endfor %}
-      
+      <tr>
+        <th></th>
+        <td><b>Итого:</b></td>
+        <td></td>
+        <td></td>
+        <td><b>{{ total }}</b></td>
+      </tr>
     </tbody>
   </table>
 
