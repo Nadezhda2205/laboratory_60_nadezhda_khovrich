@@ -14,5 +14,6 @@ urlpatterns = [
     path('products/<str:category>', products_category_view, name='products_category_view'),
 
     path('cart/', include('cart.urls')),
+    # path('cart/', include('cart.urls')),
 
 ]

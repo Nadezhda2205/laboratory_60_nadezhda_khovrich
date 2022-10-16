@@ -49,3 +49,4 @@ class CartInProductDeleteView(DeleteView):
     template_name = 'cart/cart_products.html'
     model = ProductInCart
     success_url = reverse_lazy('cart_products')
+
