@@ -83,7 +83,7 @@ def products_category_view(request, category):
             break
     context = {
         'category': category,
-        'categories': Product.CATEGORY_CHOICES,
+        # 'categories': Product.CATEGORY_CHOICES,
         'products': products 
     }
     return render(request, 'products_category.html', context)
