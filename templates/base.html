@@ -14,31 +14,50 @@
     
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-        <div class="container">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="{% url 'products' %}">Home</a>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'product_add' %}">New Product</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'cart_products' %}">Cart</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
-<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <img class="mt-1" src="{% static '/img/logo.jpg' %}" alt="cart" width="55" height="55">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'products' %}">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'product_add' %}">Добавить продукт</a>
+          </li>
+          <li>
+            <a class=" nav-link active" href="{% url 'cart_products' %}">Корзина</a>
+          </li>
+        </ul>
+          {% block searchform %}
+            
+          {% endblock  %}
+      </div>
+    </div>
+  </nav>
+  <table class="table-content " border=0 cellpadding="0" cellspacing="0">
+    <tr>
+      <td valign="top" class="left-chapters">
+        <ul id="leftchapters">
+          <h2>Категории продуктов</h2>
+
+              {% for category in categories %}
+                <li class="selected"><a class="share-yt"  href="{% url 'products_category_view' category.0 %}">{{ category.1 }}</a></li>
+              {% endfor %}  
+        </ul>
+      </td>
+      <td valign="top" class="content">
+        <ul id="leftchapters">
+
+<div class="d-flex">
+  <div>
     {% block content %}
        
     {% endblock %}
+  </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

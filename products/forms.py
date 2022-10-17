@@ -10,4 +10,4 @@ class ProductForm(ModelForm):
 
 
 class SearchForm(forms.Form):
-    search = forms.CharField(required=False)
+    search = forms.CharField(required=False, label='')
