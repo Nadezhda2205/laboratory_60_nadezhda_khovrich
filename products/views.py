@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render
 from products.models import Product
 from django.core.handlers.wsgi import WSGIRequest
 from products.forms import ProductForm, SearchForm
@@ -83,7 +83,6 @@ def products_category_view(request, category):
             break
     context = {
         'category': category,
-        # 'categories': Product.CATEGORY_CHOICES,
         'products': products 
     }
     return render(request, 'products_category.html', context)

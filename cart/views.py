@@ -8,21 +8,22 @@ from booking.forms import BookingForm
 
 def cartaddproductview(request, pk):
     product = get_object_or_404(Product, pk=pk)
+    quantity = request.POST.get('quantity')
+    print(quantity)
     if product.balance == 0:
         return redirect('products')
     products = ProductInCart.objects.all().values('product')
     products_list = []
     for item in products:
         products_list.append(item.get('product'))
-    print(products_list)
     if pk in products_list:
         productInCart = ProductInCart.objects.get(product=pk)
-        productInCart.quantity += 1
+        productInCart.quantity += quantity
         if productInCart.quantity > product.balance:
             return redirect('products')
         productInCart.save()
     else:
-        productInCart = ProductInCart(product=product, quantity=1)
+        productInCart = ProductInCart(product=product, quantity=quantity)
         productInCart.save()
     return redirect('products')
 
