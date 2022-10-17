@@ -8,7 +8,7 @@ from booking.forms import BookingForm
 
 def cartaddproductview(request, pk):
     product = get_object_or_404(Product, pk=pk)
-    quantity = request.POST.get('quantity')
+    quantity = int(request.POST.get('quantity'))
     print(quantity)
     if product.balance == 0:
         return redirect('products')

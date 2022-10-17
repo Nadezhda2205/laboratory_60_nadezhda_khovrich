@@ -1,0 +1,24 @@
+
+    <div class="col-xl-3 card mb-3 ms-3 text-dark bg-light " style="max-width: 640px; width: 495px">
+        <div class="row g-0 ">
+          <div class="col-md-6">
+            <img src="{{ product.photo }}" class="img-fluid rounded-start" alt="{{product.name}}">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">{{ product.get_category_display }}</p>
+              <p class="card-text"><small class="text-muted">Цена: {{ product.price }} тг.</small></p>
+              <a class="mr-3" href="{% url 'product' product.pk %}">
+                Еще>>></a>
+                <form action="{% url 'cart_add_product' product.pk %}" method="POST">
+                  {% csrf_token %}
+              
+                  <input type="number" name="quantity" style="width: 42px" value="1" min="1">
+                  <button class="btn btn-secondary btn-sm" type="submit">+</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  

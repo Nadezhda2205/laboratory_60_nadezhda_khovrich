@@ -29,7 +29,7 @@
             <a class="nav-link active" href="{% url 'product_add' %}">Добавить продукт</a>
           </li>
           <li>
-            <a class=" nav-link active" href="{% url 'cart_products' %}">Корзина</a>
+            <a class=" nav-link active" href="{% url 'cart_products' %}">Корзина {{ quantity_product_in_cart }}</a>
           </li>
         </ul>
           {% block searchform %}
