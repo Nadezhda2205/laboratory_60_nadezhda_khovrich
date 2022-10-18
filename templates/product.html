@@ -20,9 +20,12 @@
           <p class="card-text">Количество: {{ product.balance }} </p>
 
           <p class="card-text">Цена: {{ product.price }} </p>
-          <a href="{% url 'cart_add_product' product.pk %}"><img class="mt-3" src="{% static '/img/cart.png' %}" alt="cart" width="25" height="25">
-          </a>
-
+          <form action="{% url 'cart_add_product' product.pk %}" method="POST">
+            {% csrf_token %}
+        
+            <input type="number" name="quantity" style="width: 42px" value="1" min="1">
+            <button class="btn btn-secondary btn-sm" type="submit">+</button>
+          </form>
 
           <p class="card-text">{{ product.get_category_display }} </p>
           <p class="card-text"><small class="text-muted">{{ product.description }}</small></p>

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from products.models import Product
-from django.core.handlers.wsgi import WSGIRequest
 from products.forms import ProductForm, SearchForm
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
