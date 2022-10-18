@@ -28,13 +28,12 @@
           <li class="nav-item">
             <a class="nav-link active" href="{% url 'product_add' %}">Добавить продукт</a>
           </li>
-          <li>
-            <a class=" nav-link active" href="{% url 'cart_products' %}">Корзина {{ quantity_product_in_cart }}</a>
-          </li>
         </ul>
           {% block searchform %}
             
           {% endblock  %}
+          <a class=" nav-link active" href="{% url 'cart_products' %}">Товаров: {{ quantity_product_in_cart }}<img class="ms-3" src="{% static '/img/cart.png' %}" alt="cart" width="25" height="25"></a>
+
       </div>
     </div>
   </nav>
